@@ -4,6 +4,11 @@ body {
     font-family: "Inria Serif", serif;
 }
 
+::selection {
+    background: black;
+    color: white;
+}
+
 .header {
     width: 100%;
     min-height: 10vh;
@@ -93,7 +98,7 @@ body {
 }
 
 .profile-role {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
 
     width: 50%;
@@ -104,6 +109,7 @@ body {
 
 .profile-about {
     width: 50%;
+    font-size: 20px;
     justify-content: center;
     text-align: center;
     margin: 0;
@@ -117,6 +123,10 @@ body {
     justify-content: space-between;
     align-items: center;
     /* background-color: lightblue; */
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard */
 }
 
 .icons {
@@ -125,4 +135,17 @@ body {
 
 .icons:nth-child(3) {
     border-radius: 5px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.icons:nth-child(2) {
+    animation: spin 20s linear infinite;
 }
