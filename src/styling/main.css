@@ -2,6 +2,7 @@
 
 body {
     font-family: "Inria Serif", serif;
+    background-color: #fff;
 }
 
 ::selection {
@@ -89,15 +90,20 @@ body {
 }
 
 .rounded {
-    border-top: 1px solid #00000077;
+    border-top: 1px solid #000;
     border-radius: 5px;
     width: 35%;
     margin: 0;
 }
 
 .profile-role {
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 32px;
+    font-weight: 900;
+
+    /* padding: 10px 15px;
+    border-radius: 10px;
+    background-color: black;
+    color: #fff; */
 
     width: 50%;
     justify-content: center;
@@ -147,4 +153,58 @@ body {
 
 .icons:nth-child(2) {
     animation: spin 20s linear infinite;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 20%;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    z-index: 1000;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar.closed {
+    transform: translateX(100%);
+}
+
+.close-sidebar {
+    position: absolute;
+    top: 2.5%;
+    right: 5%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    text-align: center;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar ul li:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
 }

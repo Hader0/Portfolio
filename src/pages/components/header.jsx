@@ -9,7 +9,7 @@ import DarkSun from "../../images/sun-black.png";
 import LightSun from "../../images/sun-white.png";
 
 
-function Header() {
+function Header({ toggleSidebar }) {
 
     return (
         <div className="header">
@@ -21,7 +21,7 @@ function Header() {
                     <img src={DarkMoon} />
                 </div>
 
-                <div className="menu">
+                <div className="menu" onClick={toggleSidebar}>
                     <img src={DarkMenu} />
                 </div>
 

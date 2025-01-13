@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styling/main.css";
 
 import ReactIcon from "../images/react-icon.png";
@@ -6,12 +6,20 @@ import PythonIcon from "../images/python-icon.png";
 import JavascriptIcon from "../images/javascript-icon.png";
 
 import Header from "./components/header";
+import Sidebar from "./components/sidebar";
 
 function Main() {
 
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    // Function to toggle sidebar
+    const toggleSidebar = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    };
+
     return (
         <div className="main-page">
-            <Header />
+            <Header toggleSidebar={toggleSidebar}/>
 
             <div className="main-body"> 
                 <div className="profile-section">
@@ -30,7 +38,7 @@ function Main() {
                     </p>
                 </div>
             </div>
-
+            <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         </div>
     )
 }
