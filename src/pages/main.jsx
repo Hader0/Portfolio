@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styling/main.css";
 
 import ReactIcon from "../images/react-icon.png";
@@ -10,7 +10,23 @@ import Sidebar from "./components/sidebar";
 
 function Main() {
 
+    const [isDarkMode, setIsDarkMode] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    // Check if theme is saved in local storage
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            setIsDarkMode(savedTheme === "dark");
+        }
+    }, []);
+
+    // Function to toggle theme
+    const toggleTheme = () => {
+        const newTheme = !isDarkMode ? "dark" : "light";
+        setIsDarkMode(!isDarkMode);
+        localStorage.setItem("theme", newTheme);
+    };
 
     // Function to toggle sidebar
     const toggleSidebar = () => {
@@ -18,8 +34,8 @@ function Main() {
     };
 
     return (
-        <div className="main-page">
-            <Header toggleSidebar={toggleSidebar}/>
+        <div className={`main-page ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+            <Header toggleSidebar={toggleSidebar} toggleTheme={toggleTheme} isDarkMode={isDarkMode}/>
 
             <div className="main-body"> 
                 <div className="profile-section">
@@ -38,7 +54,7 @@ function Main() {
                     </p>
                 </div>
             </div>
-            <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+            <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} isDarkMode={isDarkMode}/>
         </div>
     )
 }

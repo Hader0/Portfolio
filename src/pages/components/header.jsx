@@ -9,26 +9,30 @@ import DarkSun from "../../images/sun-black.png";
 import LightSun from "../../images/sun-white.png";
 
 
-function Header({ toggleSidebar }) {
+function Header({ toggleSidebar, toggleTheme, isDarkMode }) {
 
     return (
-        <div className="header">
+        <div className={`header ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
 
             <div className="header-name">Hayden Bradford</div>
             <div className="header-icons">
 
-                <div className="theme">
-                    <img src={DarkMoon} />
+                <div className="theme" onClick={toggleTheme}>
+                    <img 
+                        src={isDarkMode ? LightSun : DarkMoon} 
+                        alt="Toggle Theme" 
+                        className={isDarkMode ? 'dark-mode-hover' : ''} 
+                    />
                 </div>
 
                 <div className="menu" onClick={toggleSidebar}>
-                    <img src={DarkMenu} />
+                    <img src={isDarkMode ? LightMenu : DarkMenu} alt="Toggle Sidebar" />
                 </div>
 
             </div>
 
         </div>
-    )
+    );
 }
 
 export default Header

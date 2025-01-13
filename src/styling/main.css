@@ -1,15 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
+:root {
+    --black: #000;
+    --white: #fff;
+}
+
 body {
     font-family: "Inria Serif", serif;
-    background-color: #fff;
+    background-color: var(--white);
+}
+
+.main-page {
+    background-color: var(--white);
+    color: var(--black);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 ::selection {
-    background: black;
-    color: white;
+    background: var(--black);
+    color: var(--white);
 }
 
+/* DARK THEME CHANGES */
+.main-page.dark-mode {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+::selection.dark-mode {
+    background: var(--white);
+    color: var(--black);
+}
+
+.sidebar.dark-mode {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.close-sidebar.dark-mode {
+    content: url("../images/cross-black.png");
+}
+
+.theme .dark-mode-hover:hover {
+    content: url("../images/sun-black.png");
+    height: 38px;
+}
+
+.theme .dark-mode-hover {
+    height: 38px;
+    align-self: center;
+}
+
+/* MAIN STYLING - LIGHT THEME */
 .header {
     width: 100%;
     min-height: 10vh;
@@ -35,16 +77,11 @@ body {
     justify-content: space-evenly;
     align-items: center;
 
-    /* background-color: lightblue; */
     width: 125px;
 
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard */
-}
-
-.theme {
-
 }
 
 .theme img {
@@ -55,10 +92,6 @@ body {
 .theme img:hover {
     content: url('../images/moon-white.png');
     height: 30px;
-}
-
-.menu {
-
 }
 
 .menu img {
@@ -90,7 +123,7 @@ body {
 }
 
 .rounded {
-    border-top: 1px solid #000;
+    border-top: 1px solid var(--black);
     border-radius: 5px;
     width: 35%;
     margin: 0;
@@ -99,11 +132,6 @@ body {
 .profile-role {
     font-size: 32px;
     font-weight: 900;
-
-    /* padding: 10px 15px;
-    border-radius: 10px;
-    background-color: black;
-    color: #fff; */
 
     width: 50%;
     justify-content: center;
@@ -163,8 +191,8 @@ body {
     top: 0;
     width: 20%;
     height: 100vh;
-    background-color: black;
-    color: white;
+    background-color: var(--black);
+    color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -189,7 +217,6 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    color: white;
 }
 
 .sidebar ul {
