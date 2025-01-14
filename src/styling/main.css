@@ -27,7 +27,7 @@ body {
     color: var(--white);
 }
 
-::selection.dark-mode {
+.main-page.dark-mode ::selection {
     background: var(--white);
     color: var(--black);
 }
@@ -39,6 +39,15 @@ body {
 
 .close-sidebar.dark-mode {
     content: url("../images/cross-black.png");
+}
+
+.sidebar.dark-mode ul li:hover {
+    background-color: var(--black);
+    color: var(--white);
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard */
 }
 
 .theme .dark-mode-hover:hover {
@@ -79,6 +88,7 @@ body {
 
     width: 125px;
 
+    /* Prevent highlighting */
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard */
@@ -100,7 +110,7 @@ body {
 }
 
 .menu img:hover {
-    transform: scale(1.1875);
+    transform: scale(1.1);
 }
 
 /* MAIN BODY */
@@ -217,11 +227,17 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-sidebar:hover {
+    transform: scale(1.25)
 }
 
 .sidebar ul {
     list-style-type: none;
     padding: 0;
+    width: 100%;
 }
 
 .sidebar ul li {
@@ -231,7 +247,35 @@ body {
     cursor: pointer;
 }
 
-.sidebar ul li:hover {
-    text-decoration: underline;
-    text-underline-offset: 5px;
+.sidebar ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sidebar.light-mode ul li:hover {
+    background-color: var(--white);
+    color: var(--black);
+
+    /* Prevent highlighting */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard */
+}
+
+/* SIDEBAR ACTIVE */
+
+.sidebar-active .main-body, .sidebar-active .header {
+    opacity: 0.5;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.sidebar-active .sidebar {
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.main-body,
+.header {
+    transition: opacity 0.5s ease;
 }
