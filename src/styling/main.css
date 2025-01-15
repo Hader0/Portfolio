@@ -80,6 +80,11 @@ body {
     margin-left: 20px;
 }
 
+.header-name a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .header-icons {
     display: flex;
     flex-direction: row;

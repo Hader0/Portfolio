@@ -5,8 +5,6 @@ import "../styling/about.css";
 
 import LightArrow from "../images/arrow-white.png";
 import DarkArrow from "../images/arrow-black.png";
-import LightArrowHover from "../images/arrow-white-hover.png";
-import DarkArrowHover from "../images/arrow-black-hover.png";
 
 import Header from "./components/header";
 import Sidebar from "./components/sidebar";
@@ -20,17 +18,8 @@ function About() {
     const [currentSection, setCurrentSection] = useState(0);
     const [transitionClass, setTransitionClass] = useState("");
     const [rotation, setRotation] = useState(0);
-    const [arrowSrc, setArrowSrc] = useState(isDarkMode ? LightArrow : DarkArrow);
 
     const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
-
-    const handleMouseEnter = () => {
-        setArrowSrc('arrow-white-hover.png');
-    };
-
-    const handleMouseLeave = () => {
-        setArrowSrc(isDarkMode ? LightArrow : DarkArrow);
-    };
 
     // Check if theme is saved in local storage
     useEffect(() => {
