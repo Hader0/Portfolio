@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+:root {
+    --black: #000;
+    --white: #fff;
+}
+
+body {
+    font-family: "Inria Serif", serif;
+    background-color: var(--white);
+}
+
+::selection {
+    background: var(--black);
+    color: var(--white);
+}
+
+/* Main Page */
+
+.about-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.main-page {
+    background-color: var(--white);
+    color: var(--black);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.about-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.about-heading {
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+
+    width: 110px;
+
+    margin: 0;
+}
+
+.rounded-about {
+    width: 500px;
+    height: 1px;
+    border: none;
+    border-top: 1px solid var(--black);
+    border-radius: 5px;
+}
+
+.about-infomation {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10vh;
+}
+
+.gap {
+    width: 110px;
+}
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;  
+    width: 500px;
+}
+
+/* Transition for the About Title's and Content */
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.rotate-0 {
+    transform: rotate(0deg);
+}
+
+.rotate-180 {
+    transform: rotate(-180deg);
+}
+
+.info-title {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.info-about {
+    text-align: center;
+}
+
+.next-arrow {
+    position: absolute;
+    bottom: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.next-arrow img {
+    width: 50px;
+    height: 50px;
+    transform: rotate(90deg);
+    transition: all 0.5s ease;
+
+    /* Prevent highlighting */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard */
+}
+
+.next-arrow img:hover {
+    content: url('../images/arrow-black-hover.png');
+}
+
+/* DARK THEME CHANGES FOR MAIN PAGE */
+
+.main-page.dark-mode .rounded-about {
+    border-top: 1px solid var(--white);
+}
+
+.next-arrow.dark-mode {
+    content: url("../images/arrow-white.png");
+    height: 38px;
+}
+
+.main-page.dark-mode .next-arrow .arrow-hover:hover {
+    content: url('../images/arrow-white-hover.png');
+    width: 50px;
+    height: 50px;
+}

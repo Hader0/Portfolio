@@ -242,14 +242,17 @@ body {
 
 .sidebar ul li {
     text-align: center;
-    padding: 15px;
     font-size: 24px;
+    padding: 0;
     cursor: pointer;
+    width: 100%;
 }
 
 .sidebar ul li a {
+    display: block;
     text-decoration: none;
     color: inherit;
+    padding: 15px;
 }
 
 .sidebar.light-mode ul li:hover {
