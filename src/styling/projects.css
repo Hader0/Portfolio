@@ -102,12 +102,29 @@ body {
     text-decoration: none;
 }
 
-.arrow-up img {
-    transform: rotate(0deg);
+/* Arrow Buttons */
+
+.arrow-buttons {
+    display: flex;
+    width: 125px;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
 }
 
-.arrow-down img{
-    transform: rotate(90deg);
+.next-arrow img:nth-child(2) {
+    transform: rotate(-90deg);
+}
+
+/* Transition Styling */
+
+.project-info, .project-image {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+  
+.project-info.fading, .project-image.fading {
+    opacity: 0;
 }
 
 /* DARK THEME CHANGES */
@@ -122,4 +139,8 @@ body {
 .main-page.dark-mode .projects-body .project-info .project-deployment a:hover, .main-page.dark-mode .projects-body .project-info .project-repository a:hover {
     background-color: var(--white);
     color: var(--black);
+}
+
+.main-page.dark-mode .arrow-buttons img:hover {
+    content: url('../images/arrow-white-hover.png');
 }
