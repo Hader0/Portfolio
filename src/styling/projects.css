@@ -144,3 +144,21 @@ body {
 .main-page.dark-mode .arrow-buttons img:hover {
     content: url('../images/arrow-white-hover.png');
 }
+
+/* SIDEBAR ACTIVE */
+
+.sidebar-active .projects-body {
+    opacity: 0.5;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.sidebar-active .sidebar {
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.main-body,
+.header {
+    transition: opacity 0.5s ease;
+}

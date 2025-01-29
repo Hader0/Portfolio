@@ -112,3 +112,21 @@
 .main-page.dark-mode .contact-section .social-icons .linkedin-icon {
   content: url("../images/linkedin-white.png");
 }
+
+/* SIDEBAR ACTIVE */
+
+.sidebar-active .contact-section {
+  opacity: 0.5;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.sidebar-active .sidebar {
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+.main-body,
+.header {
+  transition: opacity 0.5s ease;
+}

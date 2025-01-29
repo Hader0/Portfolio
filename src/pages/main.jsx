@@ -49,6 +49,8 @@ function Main() {
                     <p>Hi there!</p>
                     <p>Just a quick note! The styling for the site is still in progress.</p>
                     <p>Apologies!</p>
+                    <br />
+                    <p>Cheers, Hayden</p>
                 </div>
             )}
 

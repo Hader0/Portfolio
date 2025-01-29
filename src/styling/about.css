@@ -17,6 +17,7 @@ body {
 
 /* Main Page */
 
+
 .about-body {
     display: flex;
     flex-direction: column;
@@ -151,4 +152,22 @@ body {
     content: url('../images/arrow-white-hover.png');
     width: 50px;
     height: 50px;
+}
+
+/* SIDEBAR ACTIVE */
+
+.sidebar-active .about-body {
+    opacity: 0.5;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.sidebar-active .sidebar {
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.main-body,
+.header {
+    transition: opacity 0.5s ease;
 }
