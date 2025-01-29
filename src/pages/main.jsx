@@ -12,6 +12,7 @@ function Main() {
 
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isPopupVisible, setIsPopupVisible] = useState(true);
 
     // Check if theme is saved in local storage
     useEffect(() => {
@@ -33,8 +34,24 @@ function Main() {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
+    // Function to close the pop-up
+    const closePopup = () => {
+        setIsPopupVisible(false);
+    };
+
     return (
         <div className={`main-page ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+
+            {isPopupVisible && <div className="overlay"></div>}
+            {isPopupVisible && (
+                <div className="popup">
+                    <button className="close-btn" onClick={closePopup}>X</button>
+                    <p>Hi there!</p>
+                    <p>Just a quick note! The styling for the site is still in progress.</p>
+                    <p>Apologies!</p>
+                </div>
+            )}
+
             <Header toggleSidebar={toggleSidebar} toggleTheme={toggleTheme} isDarkMode={isDarkMode}/>
 
             <div className="main-body"> 

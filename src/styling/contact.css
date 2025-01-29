@@ -1,0 +1,114 @@
+.main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-section {
+  width: 35%;
+  min-height: 90vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-section h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.contact-icon a {
+    height: 50px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contact-form label {
+  margin-top: 15px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.contact-form input {
+  margin-top: 7px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 16px;
+  width: 100%;
+  background-color: var(--black);
+  color: var(--white);
+  font-weight: 700;
+  outline: none;
+}
+
+.contact-form textarea {
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 16px;
+  width: 100%;
+  height: 100px;
+  background-color: var(--black);
+  color: var(--white);
+  font-weight: 700;
+  resize: none;
+  outline: none;
+}
+
+.contact-form button {
+  margin-top: 30px;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px;
+  background-color: var(--black);
+  color: var(--white);
+  border: 1px solid var(--black);
+  border-radius: 16px;
+  cursor: pointer;
+  width: 40%;
+}
+
+.contact-form button:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.submit-message {
+    color: var(--black);
+    font-weight: 900;
+}
+
+/* Dark Mode */
+
+.main-page.dark-mode .contact-form input, .main-page.dark-mode .contact-form textarea, .main-page.dark-mode .contact-form input, .main-page.dark-mode .contact-form button {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.main-page.dark-mode .contact-form button:hover {
+  background-color: var(--black);
+  color: var(--white);
+  border: 1px solid var(--white);
+}
+
+.main-page.dark-mode .contact-section .social-icons .github-icon {
+  content: url("../images/github-white.png");
+}
+
+.main-page.dark-mode .contact-section .social-icons .linkedin-icon {
+  content: url("../images/linkedin-white.png");
+}
